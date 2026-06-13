@@ -286,8 +286,8 @@ function App() {
           style={{ transform: `translateY(${heroParallax}px)` }}
         >
           <img
-            src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Luxury Modern Classic Mansion in Balikpapan"
+            image: "./public/images/foto1.jpg"
+            alt="Luxury Modern Classic Mansion in Bandung"
             className="w-full h-[120%] object-cover hero-breath"
           />
           <div className="absolute inset-0 bg-gradient-dark" />
@@ -399,7 +399,7 @@ function App() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            image: "./public/images/foto3.jpg"
             alt="Luxury Architecture Interior"
             className="w-full h-full object-cover opacity-20"
           />
@@ -435,7 +435,7 @@ function App() {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-luxury-xl">
                   <img
-                    src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    image: "./public/images/foto8.jpg"
                     alt="Premium Modern Classic Interior"
                     className="w-full h-full object-cover"
                   />
@@ -522,7 +522,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            image: "./public/images/foto6.jpg"
             alt="Luxury Property Architecture"
             className="w-full h-full object-cover opacity-15"
           />
@@ -553,7 +553,7 @@ function App() {
                   'Working Drawing',
                   'Official Budget Planning (RAB)',
                 ],
-                image: 'https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: "./public/images/foto21.jpg",
               },
               {
                 icon: Hammer,
@@ -566,7 +566,7 @@ function App() {
                   'Premium Certified Materials',
                   'Professional Site Management',
                 ],
-                image: 'https://images.pexels.com/photos/159306/building-construction-site-scaffolding-159306.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: "./public/images/foto16.jpg",
               },
               {
                 icon: Palette,
@@ -574,13 +574,13 @@ function App() {
                 description: 'Desain interior dan produksi furniture eksklusif sesuai karakter dan kebutuhan klien.',
                 services: [
                   'Luxury Interior Design',
-                  'Kitchen Set Premium',
+                  'meeting room Premium',
                   'Walk-In Closet',
                   'Custom Wardrobe',
                   'Built-In Furniture',
                   'Independent Workshop Production',
                 ],
-                image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: "./public/images/foto12.jpg",
               },
             ].map((service, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -620,7 +620,7 @@ function App() {
         {/* Full Width Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            image: "./public/images/foto13.jpg"
             alt="Tropical Luxury Villa"
             className="w-full h-full object-cover opacity-30"
           />
@@ -699,42 +699,42 @@ function App() {
                   title: 'Initial Consultation',
                   description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.',
                   icon: Users,
-                  image: 'https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=300',
+                  image: "./public/images/foto17.jpg",
                 },
                 {
                   step: '02',
                   title: 'Site Survey & Analysis',
                   description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.',
                   icon: Target,
-                  image: 'https://images.pexels.com/photos/1103803/pexels-photo-1103803.jpeg?auto=compress&cs=tinysrgb&w=300',
+                  image: "./public/images/foto19.jpg",
                 },
                 {
                   step: '03',
                   title: 'Concept Design',
                   description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.',
                   icon: Palette,
-                  image: 'https://images.pexels.com/photos/276485/pexels-photo-276485.jpeg?auto=compress&cs=tinysrgb&w=300',
+                  image: "./public/images/foto6.jpg",
                 },
                 {
                   step: '04',
                   title: 'Technical Planning',
                   description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.',
                   icon: Shield,
-                  image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=300',
+                  image: "./public/images/foto25.jpg",
                 },
                 {
                   step: '05',
                   title: 'Construction',
                   description: 'Pelaksanaan pembangunan dengan pengawasan profesional.',
                   icon: Hammer,
-                  image: 'https://images.pexels.com/photos/159306/building-construction-site-scaffolding-159306.jpeg?auto=compress&cs=tinysrgb&w=300',
+                  image: "./public/images/foto6.jpg",
                 },
                 {
                   step: '06',
                   title: 'Project Handover',
                   description: 'Quality control akhir, serah terima proyek, dan garansi.',
                   icon: Award,
-                  image: 'https://images.pexels.com/photos/11158099/pexels-photo-11158099.jpeg?auto=compress&cs=tinysrgb&w=300',
+                  image: "./public/images/foto20.jpg",
                 },
               ].map((item, index) => (
                 <AnimatedSection key={index} delay={index * 100}>
@@ -773,7 +773,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/2128817/pexels-photo-2128817.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src=image: "./public/images/foto10.jpg"
             alt="Luxury Architecture Background"
             className="w-full h-full object-cover opacity-20"
           />
@@ -792,38 +792,38 @@ function App() {
               {
                 title: 'Modern Classic Residence',
                 category: 'Luxury Residence',
-                location: 'Balikpapan',
-                image: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600',
+                location: 'Jepara',
+                image: "./public/images/foto5.jpg" ,
               },
               {
-                title: 'Lumina House',
+                title: 'Nglimut House',
                 category: 'Contemporary Villa',
-                location: 'Samarinda',
-                image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600',
+                location: 'Semarang',
+                image: "./public/images/foto22.jpg",
               },
               {
                 title: 'Executive Office Premier',
                 category: 'Commercial Building',
-                location: 'IKN Nusantara',
-                image: 'https://images.pexels.com/photos/2346482/pexels-photo-2346482.jpeg?auto=compress&cs=tinysrgb&w=600',
+                location: 'Canggu',
+                image: "./public/images/foto9.jpg",
               },
               {
                 title: 'Bayfront Villa',
                 category: 'Villa & Resort',
                 location: 'Balikpapan',
-                image: 'https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: "./public/images/foto13.jpg",
               },
               {
                 title: 'Artisan Restaurant',
                 category: 'F&B Space',
-                location: 'Samarinda',
-                image: 'https://images.pexels.com/photos/674020/pexels-photo-674020.jpeg?auto=compress&cs=tinysrgb&w=600',
+                location: 'Tuban',
+                image: "./public/images/nama-foto11.jpg",
               },
               {
                 title: 'Grand Kitchen Suite',
                 category: 'Interior & Furniture',
                 location: 'Balikpapan',
-                image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: "./public/images/foto7.jpg",
               },
             ].map((project, index) => (
               <AnimatedSection key={index} delay={index * 100}>
@@ -877,14 +877,14 @@ function App() {
               {
                 quote: '"Awalnya cukup sulit menemukan kontraktor yang benar-benar memahami gaya Modern Classic. ADITYARCH berhasil menghadirkan kualitas yang sangat rapi dan elegan."',
                 author: 'Homeowner',
-                location: 'Balikpapan',
+                location: 'Jakarta',
                 rating: 5,
                 image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=100',
               },
               {
                 quote: '"Koordinasi sangat profesional. Dari desain hingga custom furniture berjalan dalam satu sistem yang terorganisir dengan sangat baik."',
                 author: 'Business Owner',
-                location: 'IKN Nusantara',
+                location: 'Semarang',
                 rating: 5,
                 image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=100',
               },
@@ -922,7 +922,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            image: "./public/images/foto2.jpg"
             alt="Luxury Property Exterior"
             className="w-full h-full object-cover"
           />
@@ -1023,9 +1023,10 @@ function App() {
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-champagne-500/60 mt-1 flex-shrink-0" />
                   <span>
-                    Teritip, Balikpapan Timur<br />
+                    Jl.Mulawarman,Lamaru, Balikpapan Timur<br />
                     Kota Balikpapan<br />
                     Kalimantan Timur 76118
+                    Jl.Gajah Mada No.49, Kec Semarang Tengah
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
