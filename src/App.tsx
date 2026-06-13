@@ -6,9 +6,7 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  ArrowDown,
   Award,
-  Users,
   Building2,
   Wrench,
   Palette,
@@ -197,9 +195,7 @@ function App() {
               }`}>A</span>
             </div>
             <div className="flex flex-col">
-              <span className={`font-display text-2xl font-semibold tracking-tight transition-colors duration-500 ${
-                isScrolled ? 'text-ivory-white' : 'text-ivory-white'
-              }`}>
+              <span className="font-display text-2xl font-semibold tracking-tight text-ivory-white">
                 ADITYARCH
               </span>
               <span className={`text-[10px] tracking-[0.25em] uppercase transition-colors duration-500 ${
@@ -240,9 +236,7 @@ function App() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 transition-colors duration-300 ${
-              isScrolled ? 'text-ivory-white' : 'text-ivory-white'
-            }`}
+            className="lg:hidden p-2 transition-colors duration-300 text-ivory-white"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -286,10 +280,10 @@ function App() {
           style={{ transform: `translateY(${heroParallax}px)` }}
         >
           <img
-  src="./public/images/foto1.jpg"
-  alt="Luxury Modern Classic Mansion in Bandung"
-  className="w-full h-[120%] object-cover hero-breath"
-/>
+            src="./public/images/foto1.jpg"
+            alt="Luxury Modern Classic Mansion in Bandung"
+            className="w-full h-[120%] object-cover hero-breath"
+          />
           <div className="absolute inset-0 bg-gradient-dark" />
           <div className="absolute inset-0 bg-gradient-radial-dark" />
         </div>
@@ -397,14 +391,14 @@ function App() {
       {/* About Section */}
       <section id="about" className="section-padding relative overflow-hidden">
         {/* Background Image */}
-       <div className="absolute inset-0 z-0">
-            <img
-              src="./public/images/foto3.jpg"
-              alt="Luxury Architecture Interior"
-              className="w-full h-full object-cover opacity-20"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-obsidian-500 via-obsidian-500/90 to-obsidian-500/70" />
+        <div className="absolute inset-0 z-0">
+          <img
+            src="./public/images/foto3.jpg"
+            alt="Luxury Architecture Interior"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-obsidian-500 via-obsidian-500/90 to-obsidian-500/70" />
         
         <div className="container-luxury relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -434,12 +428,11 @@ function App() {
             <AnimatedSection delay={200} className="relative">
               <div className="relative">
                 <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-luxury-xl">
-                <img
-                  src="./public/images/foto8.jpg"
-                  alt="Premium Modern Classic Interior"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+                  <img
+                    src="./public/images/foto8.jpg"
+                    alt="Premium Modern Classic Interior"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Floating Card */}
                 <div className="absolute -bottom-8 -left-8 glass p-8 rounded-sm shadow-luxury">
@@ -486,7 +479,7 @@ function App() {
               {
                 icon: Sparkles,
                 title: 'Java & Bali Quality Standard',
-                description: 'Menghadirkan kualitas pengerjaan, craftsmanship, dan detail finishing yang identik dengan proyek-proyek premium Jawa dan Bali.',
+                description: 'Menghadirkan kualitas pengerjaan, craftsmanship, and detail finishing yang identik dengan proyek-proyek premium Jawa dan Bali.',
               },
               {
                 icon: Eye,
@@ -523,7 +516,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src= "./public/images/foto6.jpg"
+            src="./public/images/foto6.jpg"
             alt="Luxury Property Architecture"
             className="w-full h-full object-cover opacity-15"
           />
@@ -554,7 +547,7 @@ function App() {
                   'Working Drawing',
                   'Official Budget Planning (RAB)',
                 ],
-                src= "./public/images/foto21.jpg",
+                image: "./public/images/foto21.jpg",
               },
               {
                 icon: Hammer,
@@ -567,7 +560,7 @@ function App() {
                   'Premium Certified Materials',
                   'Professional Site Management',
                 ],
-                src= "./public/images/foto16.jpg",
+                image: "./public/images/foto16.jpg",
               },
               {
                 icon: Palette,
@@ -581,7 +574,7 @@ function App() {
                   'Built-In Furniture',
                   'Independent Workshop Production',
                 ],
-                src= "./public/images/foto12.jpg",
+                image: "./public/images/foto12.jpg",
               },
             ].map((service, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -617,15 +610,15 @@ function App() {
       </section>
 
       {/* Design Build Advantage */}
-      <section className="section-padding overflow-hidden">
+      <section className="section-padding overflow-hidden relative">
         {/* Full Width Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src= "./public/images/foto13.jpg"
+            src="./public/images/foto13.jpg"
             alt="Tropical Luxury Villa"
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-obsidian-500" />
+          <div className="absolute inset-0 bg-obsidian-500/90" />
           <div className="absolute inset-0 bg-gradient-to-r from-obsidian-500 via-obsidian-500/80 to-transparent" />
         </div>
 
@@ -700,42 +693,42 @@ function App() {
                   title: 'Initial Consultation',
                   description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.',
                   icon: Users,
-                  src= "./public/images/foto17.jpg",
+                  image: "./public/images/foto17.jpg",
                 },
                 {
                   step: '02',
                   title: 'Site Survey & Analysis',
                   description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.',
                   icon: Target,
-                  src= "./public/images/foto19.jpg",
+                  image: "./public/images/foto19.jpg",
                 },
                 {
                   step: '03',
                   title: 'Concept Design',
                   description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.',
                   icon: Palette,
-                  src= "./public/images/foto6.jpg",
+                  image: "./public/images/foto6.jpg",
                 },
                 {
                   step: '04',
                   title: 'Technical Planning',
                   description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.',
                   icon: Shield,
-                  src= "./public/images/foto25.jpg",
+                  image: "./public/images/foto25.jpg",
                 },
                 {
                   step: '05',
                   title: 'Construction',
                   description: 'Pelaksanaan pembangunan dengan pengawasan profesional.',
                   icon: Hammer,
-                  src= "./public/images/foto6.jpg",
+                  image: "./public/images/foto6.jpg",
                 },
                 {
                   step: '06',
                   title: 'Project Handover',
                   description: 'Quality control akhir, serah terima proyek, dan garansi.',
                   icon: Award,
-                  src= "./public/images/foto20.jpg",
+                  image: "./public/images/foto20.jpg",
                 },
               ].map((item, index) => (
                 <AnimatedSection key={index} delay={index * 100}>
@@ -774,11 +767,11 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src= "./public/images/foto10.jpg"
+            src="./public/images/foto10.jpg"
             alt="Luxury Architecture Background"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-obsidian-500" />
+          <div className="absolute inset-0 bg-obsidian-500/90" />
         </div>
 
         <div className="container-luxury relative z-10">
@@ -794,37 +787,37 @@ function App() {
                 title: 'Modern Classic Residence',
                 category: 'Luxury Residence',
                 location: 'Jepara',
-                src= "./public/images/foto5.jpg" ,
+                image: "./public/images/foto5.jpg",
               },
               {
                 title: 'Nglimut House',
                 category: 'Contemporary Villa',
                 location: 'Semarang',
-                src= "./public/images/foto22.jpg",
+                image: "./public/images/foto22.jpg",
               },
               {
                 title: 'Executive Office Premier',
                 category: 'Commercial Building',
                 location: 'Canggu',
-                src= "./public/images/foto9.jpg",
+                image: "./public/images/foto9.jpg",
               },
               {
                 title: 'Bayfront Villa',
                 category: 'Villa & Resort',
                 location: 'Balikpapan',
-                src= "./public/images/foto13.jpg",
+                image: "./public/images/foto13.jpg",
               },
               {
                 title: 'Artisan Restaurant',
                 category: 'F&B Space',
                 location: 'Tuban',
-                src= "./public/images/nama-foto11.jpg",
+                image: "./public/images/nama-foto11.jpg",
               },
               {
                 title: 'Grand Kitchen Suite',
                 category: 'Interior & Furniture',
                 location: 'Balikpapan',
-                src= "./public/images/foto7.jpg",
+                image: "./public/images/foto7.jpg",
               },
             ].map((project, index) => (
               <AnimatedSection key={index} delay={index * 100}>
@@ -880,14 +873,14 @@ function App() {
                 author: 'Homeowner',
                 location: 'Jakarta',
                 rating: 5,
-                src= 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=100',
+                image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=100',
               },
               {
                 quote: '"Koordinasi sangat profesional. Dari desain hingga custom furniture berjalan dalam satu sistem yang terorganisir dengan sangat baik."',
                 author: 'Business Owner',
                 location: 'Semarang',
                 rating: 5,
-                src= 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=100',
+                image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=100',
               },
             ].map((testimonial, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -923,7 +916,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src= "./public/images/foto2.jpg"
+            src="./public/images/foto2.jpg"
             alt="Luxury Property Exterior"
             className="w-full h-full object-cover"
           />
@@ -1024,10 +1017,10 @@ function App() {
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-champagne-500/60 mt-1 flex-shrink-0" />
                   <span>
-                    Jl.Mulawarman,Lamaru, Balikpapan Timur<br />
+                    Jl. Mulawarman, Lamaru, Balikpapan Timur<br />
                     Kota Balikpapan<br />
-                    Kalimantan Timur 76118
-                    Jl.Gajah Mada No.49, Kec Semarang Tengah
+                    Kalimantan Timur 76118<br />
+                    Jl. Gajah Mada No.49, Kec Semarang Tengah
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1066,7 +1059,7 @@ function App() {
           {/* Copyright */}
           <div className="border-t border-ivory-white/5 pt-6 text-center">
             <p className="text-[11px] text-ivory-300/40">
-              &copy; {new Date().getFullYear()} ADITYARCH Studio & Build. All Rights Reserved.
+              © {new Date().getFullYear()} ADITYARCH Studio & Build. All Rights Reserved.
             </p>
           </div>
         </div>
