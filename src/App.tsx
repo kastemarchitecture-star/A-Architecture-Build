@@ -229,13 +229,13 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{ transform: `translateY(${heroParallax}px)` }}
         >
           <img
-            src="/images/foto1.jpg"
+            src="/images/foto1.png"
             alt="Luxury Modern Classic Mansion"
             className="w-full h-[120%] object-cover opacity-40"
           />
@@ -310,7 +310,7 @@ function App() {
       <section id="about" className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/foto3.jpg"
+            src="/images/foto3.png"
             alt="Luxury Architecture"
             className="w-full h-full object-cover opacity-10"
           />
@@ -337,7 +337,7 @@ function App() {
               <div className="relative max-w-md mx-auto">
                 <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
                   <img
-                    src="/images/foto8.jpg"
+                    src="/images/foto8.png"
                     alt="Premium Interior"
                     className="w-full h-full object-cover"
                   />
@@ -371,19 +371,19 @@ function App() {
                 icon: Building2,
                 title: 'Architectural Design',
                 description: 'Perancangan Rumah Tinggal, Villa, Resort, Cafe, Restaurant, Office Building, dan Commercial Property.',
-                image: "/images/foto21.jpg",
+                image: "/images/foto21.png",
               },
               {
                 icon: Hammer,
                 title: 'Construction & Build',
                 description: 'Pembangunan rumah baru, renovasi total, commercial building, hingga fit-out interior premium.',
-                image: "/images/foto16.jpg",
+                image: "/images/foto16.png",
               },
               {
                 icon: Palette,
                 title: 'Interior & Furniture',
                 description: 'Desain interior dan produksi furniture eksklusif sesuai karakter dan kebutuhan klien.',
-                image: "/images/foto12.jpg",
+                image: "/images/foto12.jpeg",
               },
             ].map((service, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -409,8 +409,40 @@ function App() {
         </div>
       </section>
 
+      {/* Work Process Section */}
+      <section id="process" className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-16">
+            <span className="text-amber-500 text-xs tracking-widest uppercase font-semibold block mb-2">Our Methodology</span>
+            <h2 className="text-3xl font-light text-white">Proses Kerja Kami</h2>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { step: '01', title: 'Initial Consultation', description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.', icon: Users, image: "/images/foto17.jpeg" },
+              { step: '02', title: 'Site Survey & Analysis', description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.', icon: Target, image: "/images/foto19.jpeg" },
+              { step: '03', title: 'Concept Design', description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.', icon: Palette, image: "/images/foto6.jpeg" },
+              { step: '04', title: 'Technical Planning', description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.', icon: Shield, image: "/images/foto25.jpeg" },
+              { step: '05', title: 'Construction', description: 'Pelaksanaan pembangunan dengan pengawasan profesional.', icon: Hammer, image: "/images/foto14.png" },
+              { step: '06', title: 'Project Handover', description: 'Quality control akhir, serah terima proyek, dan garansi.', icon: Award, image: "/images/foto20.png" },
+            ].map((item, index) => (
+              <AnimatedSection key={index} delay={index * 100}>
+                <div className="bg-[#1a1a1a] rounded-sm overflow-hidden border border-white/5 p-6 text-center">
+                  <span className="text-amber-500 font-bold text-sm block mb-2">STEP {item.step}</span>
+                  <div className="aspect-[3/2] rounded-sm overflow-hidden mb-4">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  </div>
+                  <h3 className="text-lg font-medium text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-24">
+      <section id="portfolio" className="py-24 bg-[#161616]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <span className="text-amber-500 text-xs tracking-widest uppercase font-semibold block mb-2">Portfolio</span>
@@ -419,12 +451,12 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Modern Classic Residence', category: 'Luxury Residence', location: 'Jepara', image: "/images/foto5.jpg" },
-              { title: 'Nglimut House', category: 'Contemporary Villa', location: 'Semarang', image: "/images/foto22.jpg" },
-              { title: 'Executive Office Premier', category: 'Commercial Building', location: 'Canggu', image: "/images/foto9.jpg" },
-              { title: 'Bayfront Villa', category: 'Villa & Resort', location: 'Balikpapan', image: "/images/foto13.jpg" },
-              { title: 'Artisan Restaurant', category: 'F&B Space', location: 'Tuban', image: "/images/foto6.jpg" },
-              { title: 'Grand Kitchen Suite', category: 'Interior & Furniture', location: 'Balikpapan', image: "/images/foto7.jpg" },
+              { title: 'Modern Classic Residence', category: 'Luxury Residence', location: 'Jepara', image: "/images/foto5.jpeg" },
+              { title: 'Nglimut House', category: 'Contemporary Villa', location: 'Semarang', image: "/images/foto22.png" },
+              { title: 'Executive Office Premier', category: 'Commercial Building', location: 'Canggu', image: "/images/foto9.png" },
+              { title: 'Bayfront Villa', category: 'Villa & Resort', location: 'Balikpapan', image: "/images/foto13.png" },
+              { title: 'Artisan Restaurant', category: 'F&B Space', location: 'Tuban', image: "/images/foto11.jpeg" },
+              { title: 'Grand Kitchen Suite', category: 'Interior & Furniture', location: 'Balikpapan', image: "/images/foto7.jpeg" },
             ].map((project, index) => (
               <AnimatedSection key={index} delay={index * 100}>
                 <div className="group relative aspect-[4/5] overflow-hidden rounded-sm bg-[#1a1a1a] border border-white/5">
@@ -446,7 +478,14 @@ function App() {
       </section>
 
       {/* Contact & CTA */}
-      <section id="contact" className="py-24 bg-[#161616] relative overflow-hidden">
+      <section id="contact" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/foto2.png"
+            alt="Luxury Property Exterior"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
         <div className="max-w-4xl mx-auto text-center px-4 relative z-10">
           <span className="text-amber-400 text-xs tracking-widest uppercase font-semibold block mb-2">Start Your Journey</span>
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
