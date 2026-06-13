@@ -286,10 +286,10 @@ function App() {
           style={{ transform: `translateY(${heroParallax}px)` }}
         >
           <img
-            image: "./public/images/foto1.jpg"
-            alt="Luxury Modern Classic Mansion in Bandung"
-            className="w-full h-[120%] object-cover hero-breath"
-          />
+  src="./public/images/foto1.jpg"
+  alt="Luxury Modern Classic Mansion in Bandung"
+  className="w-full h-[120%] object-cover hero-breath"
+/>
           <div className="absolute inset-0 bg-gradient-dark" />
           <div className="absolute inset-0 bg-gradient-radial-dark" />
         </div>
