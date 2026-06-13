@@ -397,8 +397,7 @@ function App() {
       {/* About Section */}
       <section id="about" className="section-padding relative overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 z-0">
+       <div className="absolute inset-0 z-0">
             <img
               src="./public/images/foto3.jpg"
               alt="Luxury Architecture Interior"
