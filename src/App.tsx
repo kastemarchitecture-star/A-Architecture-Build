@@ -398,11 +398,13 @@ function App() {
       <section id="about" className="section-padding relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            image: "./public/images/foto3.jpg"
-            alt="Luxury Architecture Interior"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <div className="absolute inset-0 z-0">
+            <img
+              src="./public/images/foto3.jpg"
+              alt="Luxury Architecture Interior"
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-obsidian-500 via-obsidian-500/90 to-obsidian-500/70" />
         </div>
 
