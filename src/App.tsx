@@ -405,8 +405,7 @@ function App() {
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-obsidian-500 via-obsidian-500/90 to-obsidian-500/70" />
-        </div>
-
+        
         <div className="container-luxury relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <AnimatedSection>
@@ -435,11 +434,12 @@ function App() {
             <AnimatedSection delay={200} className="relative">
               <div className="relative">
                 <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-luxury-xl">
-                  <img
-                    image: "./public/images/foto8.jpg"
-                    alt="Premium Modern Classic Interior"
-                    className="w-full h-full object-cover"
-                  />
+                <img
+                  src="./public/images/foto8.jpg"
+                  alt="Premium Modern Classic Interior"
+                  className="w-full h-full object-cover"
+                />
+              </div>
                 </div>
                 {/* Floating Card */}
                 <div className="absolute -bottom-8 -left-8 glass p-8 rounded-sm shadow-luxury">
@@ -523,7 +523,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            image: "./public/images/foto6.jpg"
+            src= "./public/images/foto6.jpg"
             alt="Luxury Property Architecture"
             className="w-full h-full object-cover opacity-15"
           />
@@ -554,7 +554,7 @@ function App() {
                   'Working Drawing',
                   'Official Budget Planning (RAB)',
                 ],
-                image: "./public/images/foto21.jpg",
+                src= "./public/images/foto21.jpg",
               },
               {
                 icon: Hammer,
@@ -567,7 +567,7 @@ function App() {
                   'Premium Certified Materials',
                   'Professional Site Management',
                 ],
-                image: "./public/images/foto16.jpg",
+                src= "./public/images/foto16.jpg",
               },
               {
                 icon: Palette,
@@ -581,7 +581,7 @@ function App() {
                   'Built-In Furniture',
                   'Independent Workshop Production',
                 ],
-                image: "./public/images/foto12.jpg",
+                src= "./public/images/foto12.jpg",
               },
             ].map((service, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -621,7 +621,7 @@ function App() {
         {/* Full Width Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            image: "./public/images/foto13.jpg"
+            src= "./public/images/foto13.jpg"
             alt="Tropical Luxury Villa"
             className="w-full h-full object-cover opacity-30"
           />
@@ -700,42 +700,42 @@ function App() {
                   title: 'Initial Consultation',
                   description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.',
                   icon: Users,
-                  image: "./public/images/foto17.jpg",
+                  src= "./public/images/foto17.jpg",
                 },
                 {
                   step: '02',
                   title: 'Site Survey & Analysis',
                   description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.',
                   icon: Target,
-                  image: "./public/images/foto19.jpg",
+                  src= "./public/images/foto19.jpg",
                 },
                 {
                   step: '03',
                   title: 'Concept Design',
                   description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.',
                   icon: Palette,
-                  image: "./public/images/foto6.jpg",
+                  src= "./public/images/foto6.jpg",
                 },
                 {
                   step: '04',
                   title: 'Technical Planning',
                   description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.',
                   icon: Shield,
-                  image: "./public/images/foto25.jpg",
+                  src= "./public/images/foto25.jpg",
                 },
                 {
                   step: '05',
                   title: 'Construction',
                   description: 'Pelaksanaan pembangunan dengan pengawasan profesional.',
                   icon: Hammer,
-                  image: "./public/images/foto6.jpg",
+                  src= "./public/images/foto6.jpg",
                 },
                 {
                   step: '06',
                   title: 'Project Handover',
                   description: 'Quality control akhir, serah terima proyek, dan garansi.',
                   icon: Award,
-                  image: "./public/images/foto20.jpg",
+                  src= "./public/images/foto20.jpg",
                 },
               ].map((item, index) => (
                 <AnimatedSection key={index} delay={index * 100}>
@@ -774,7 +774,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src=image: "./public/images/foto10.jpg"
+            src= "./public/images/foto10.jpg"
             alt="Luxury Architecture Background"
             className="w-full h-full object-cover opacity-20"
           />
@@ -794,37 +794,37 @@ function App() {
                 title: 'Modern Classic Residence',
                 category: 'Luxury Residence',
                 location: 'Jepara',
-                image: "./public/images/foto5.jpg" ,
+                src= "./public/images/foto5.jpg" ,
               },
               {
                 title: 'Nglimut House',
                 category: 'Contemporary Villa',
                 location: 'Semarang',
-                image: "./public/images/foto22.jpg",
+                src= "./public/images/foto22.jpg",
               },
               {
                 title: 'Executive Office Premier',
                 category: 'Commercial Building',
                 location: 'Canggu',
-                image: "./public/images/foto9.jpg",
+                src= "./public/images/foto9.jpg",
               },
               {
                 title: 'Bayfront Villa',
                 category: 'Villa & Resort',
                 location: 'Balikpapan',
-                image: "./public/images/foto13.jpg",
+                src= "./public/images/foto13.jpg",
               },
               {
                 title: 'Artisan Restaurant',
                 category: 'F&B Space',
                 location: 'Tuban',
-                image: "./public/images/nama-foto11.jpg",
+                src= "./public/images/nama-foto11.jpg",
               },
               {
                 title: 'Grand Kitchen Suite',
                 category: 'Interior & Furniture',
                 location: 'Balikpapan',
-                image: "./public/images/foto7.jpg",
+                src= "./public/images/foto7.jpg",
               },
             ].map((project, index) => (
               <AnimatedSection key={index} delay={index * 100}>
@@ -880,14 +880,14 @@ function App() {
                 author: 'Homeowner',
                 location: 'Jakarta',
                 rating: 5,
-                image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=100',
+                src= 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=100',
               },
               {
                 quote: '"Koordinasi sangat profesional. Dari desain hingga custom furniture berjalan dalam satu sistem yang terorganisir dengan sangat baik."',
                 author: 'Business Owner',
                 location: 'Semarang',
                 rating: 5,
-                image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=100',
+                src= 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=100',
               },
             ].map((testimonial, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -923,7 +923,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            image: "./public/images/foto2.jpg"
+            src= "./public/images/foto2.jpg"
             alt="Luxury Property Exterior"
             className="w-full h-full object-cover"
           />
