@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   Menu,
   X,
@@ -12,129 +12,28 @@ import {
   Palette,
   Hammer,
   CheckCircle2,
-  ChevronRight,
   Star,
-  Clock,
   Shield,
   Target,
-  Eye,
   Heart,
   Diamond,
   Crown,
-  Sparkles,
   ChevronDown,
 } from 'lucide-react';
-
-// Custom hook for scroll-triggered animations
-function useScrollAnimation() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.15, rootMargin: '-50px' }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, isVisible };
-}
-
-// Parallax hook
-function useParallax(speed = 0.5) {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffset(window.pageYOffset * speed);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [speed]);
-
-  return offset;
-}
-
-// Animated counter component
-function AnimatedCounter({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const { ref, isVisible } = useScrollAnimation();
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime: number;
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-    requestAnimationFrame(animate);
-  }, [isVisible, end, duration]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {count}{suffix}
-    </span>
-  );
-}
-
-// Section wrapper with scroll animation
-function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation();
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
-  const heroParallax = useParallax(0.3);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
-
-      const sections = ['about', 'services', 'portfolio', 'process', 'testimonials', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = useCallback((id: string) => {
-    setActiveSection(id);
     setIsMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
@@ -201,9 +100,7 @@ function App() {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-[11px] tracking-[0.2em] uppercase font-medium transition-colors duration-300 ${
-                  activeSection === item.id ? 'text-amber-400' : 'text-gray-300 hover:text-white'
-                }`}
+                className="text-[11px] tracking-[0.2em] uppercase font-medium text-gray-300 hover:text-white transition-colors duration-300"
               >
                 {item.label}
               </button>
@@ -219,25 +116,19 @@ function App() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-white"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-white">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{ transform: `translateY(${heroParallax}px)` }}
-        >
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img
             src="/images/foto1.png"
             alt="Luxury Modern Classic Mansion"
-            className="w-full h-[120%] object-cover opacity-40"
+            className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/70 to-[#111111]/40" />
         </div>
@@ -287,19 +178,15 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: 50, suffix: '+', label: 'Premium Projects', icon: Crown },
-              { value: 10, suffix: ',000+', label: 'Square Meters', icon: Building2 },
-              { value: 95, suffix: '%', label: 'Client Referral', icon: Heart },
-              { value: 100, suffix: '%', label: 'Integration', icon: Wrench },
+              { value: '50+', label: 'Premium Projects', icon: Crown },
+              { value: '10,000+', label: 'Square Meters', icon: Building2 },
+              { value: '95%', label: 'Client Referral', icon: Heart },
+              { value: '100%', label: 'Integration', icon: Wrench },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <stat.icon size={20} className="mx-auto mb-2 text-amber-500/60" />
-                <div className="text-3xl font-semibold text-white mb-1">
-                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                </div>
-                <span className="text-[10px] tracking-[0.2em] uppercase text-gray-500">
-                  {stat.label}
-                </span>
+                <div className="text-3xl font-semibold text-white mb-1">{stat.value}</div>
+                <span className="text-[10px] tracking-[0.2em] uppercase text-gray-500">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -318,7 +205,7 @@ function App() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <AnimatedSection>
+            <div>
               <span className="text-amber-500 text-xs tracking-widest uppercase font-semibold block mb-2">Our Philosophy</span>
               <h2 className="text-3xl md:text-4xl font-light text-white mb-6 leading-tight">
                 Menciptakan<br />
@@ -331,16 +218,12 @@ function App() {
               <p className="text-gray-400 leading-relaxed mb-6 font-light">
                 Melalui pendekatan Design & Build yang terintegrasi, kami memastikan setiap detail dirancang dan dibangun dengan presisi tinggi untuk menghasilkan karya yang elegan, fungsional, dan bernilai tinggi.
               </p>
-            </AnimatedSection>
+            </div>
 
-            <AnimatedSection delay={200}>
+            <div>
               <div className="relative max-w-md mx-auto">
                 <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-                  <img
-                    src="/images/foto8.png"
-                    alt="Premium Interior"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/images/foto8.png" alt="Premium Interior" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-[#1a1a1a] p-6 rounded-sm border border-white/5 shadow-xl">
                   <div className="flex items-center gap-4">
@@ -352,7 +235,7 @@ function App() {
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>
@@ -360,10 +243,10 @@ function App() {
       {/* Services Section */}
       <section id="services" className="py-24 bg-[#161616]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="text-amber-500 text-xs tracking-widest uppercase font-semibold block mb-2">Premium Services</span>
             <h2 className="text-3xl font-light text-white">Layanan Terintegrasi</h2>
-          </AnimatedSection>
+          </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {[
@@ -371,7 +254,7 @@ function App() {
                 icon: Building2,
                 title: 'Architectural Design',
                 description: 'Perancangan Rumah Tinggal, Villa, Resort, Cafe, Restaurant, Office Building, dan Commercial Property.',
-                image: "/images/foto21.png",
+                image: "/images/foto21.jpeg",
               },
               {
                 icon: Hammer,
@@ -386,24 +269,18 @@ function App() {
                 image: "/images/foto12.jpeg",
               },
             ].map((service, index) => (
-              <AnimatedSection key={index} delay={index * 150}>
-                <div className="bg-[#1a1a1a] rounded-sm overflow-hidden border border-white/5 hover:border-amber-500/30 transition-all duration-300">
-                  <div className="aspect-[4/3] relative">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="w-10 h-10 rounded-sm bg-amber-500/10 flex items-center justify-center mb-4">
-                      <service.icon className="w-5 h-5 text-amber-400" />
-                    </div>
-                    <h3 className="text-lg font-medium text-white mb-2">{service.title}</h3>
-                    <p className="text-gray-400 text-xs leading-relaxed">{service.description}</p>
-                  </div>
+              <div key={index} className="bg-[#1a1a1a] rounded-sm overflow-hidden border border-white/5 hover:border-amber-500/30 transition-all duration-300">
+                <div className="aspect-[4/3] relative">
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
-              </AnimatedSection>
+                <div className="p-6">
+                  <div className="w-10 h-10 rounded-sm bg-amber-500/10 flex items-center justify-center mb-4">
+                    <service.icon className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <h3 className="text-lg font-medium text-white mb-2">{service.title}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{service.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -412,30 +289,28 @@ function App() {
       {/* Work Process Section */}
       <section id="process" className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="text-amber-500 text-xs tracking-widest uppercase font-semibold block mb-2">Our Methodology</span>
             <h2 className="text-3xl font-light text-white">Proses Kerja Kami</h2>
-          </AnimatedSection>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'Initial Consultation', description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.', icon: Users, image: "/images/foto17.jpeg" },
-              { step: '02', title: 'Site Survey & Analysis', description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.', icon: Target, image: "/images/foto19.jpeg" },
-              { step: '03', title: 'Concept Design', description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.', icon: Palette, image: "/images/foto6.jpeg" },
-              { step: '04', title: 'Technical Planning', description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.', icon: Shield, image: "/images/foto25.jpeg" },
-              { step: '05', title: 'Construction', description: 'Pelaksanaan pembangunan dengan pengawasan profesional.', icon: Hammer, image: "/images/foto14.png" },
-              { step: '06', title: 'Project Handover', description: 'Quality control akhir, serah terima proyek, dan garansi.', icon: Award, image: "/images/foto20.png" },
+              { step: '01', title: 'Initial Consultation', description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.', image: "/images/foto17.jpeg" },
+              { step: '02', title: 'Site Survey & Analysis', description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.', image: "/images/foto19.jpeg" },
+              { step: '03', title: 'Concept Design', description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.', image: "/images/foto6.jpeg" },
+              { step: '04', title: 'Technical Planning', description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.', image: "/images/foto25.jpeg" },
+              { step: '05', title: 'Construction', description: 'Pelaksanaan pembangunan dengan pengawasan profesional.', image: "/images/foto14.png" },
+              { step: '06', title: 'Project Handover', description: 'Quality control akhir, serah terima proyek, dan garansi.', image: "/images/foto20.png" },
             ].map((item, index) => (
-              <AnimatedSection key={index} delay={index * 100}>
-                <div className="bg-[#1a1a1a] rounded-sm overflow-hidden border border-white/5 p-6 text-center">
-                  <span className="text-amber-500 font-bold text-sm block mb-2">STEP {item.step}</span>
-                  <div className="aspect-[3/2] rounded-sm overflow-hidden mb-4">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                  </div>
-                  <h3 className="text-lg font-medium text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
+              <div key={index} className="bg-[#1a1a1a] rounded-sm overflow-hidden border border-white/5 p-6 text-center">
+                <span className="text-amber-500 font-bold text-sm block mb-2">STEP {item.step}</span>
+                <div className="aspect-[3/2] rounded-sm overflow-hidden mb-4">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                 </div>
-              </AnimatedSection>
+                <h3 className="text-lg font-medium text-white mb-2">{item.title}</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -444,10 +319,10 @@ function App() {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-24 bg-[#161616]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="text-amber-500 text-xs tracking-widest uppercase font-semibold block mb-2">Portfolio</span>
             <h2 className="text-3xl font-light text-white">Selected Masterpieces</h2>
-          </AnimatedSection>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -458,20 +333,18 @@ function App() {
               { title: 'Artisan Restaurant', category: 'F&B Space', location: 'Tuban', image: "/images/foto11.jpeg" },
               { title: 'Grand Kitchen Suite', category: 'Interior & Furniture', location: 'Balikpapan', image: "/images/foto7.jpeg" },
             ].map((project, index) => (
-              <AnimatedSection key={index} delay={index * 100}>
-                <div className="group relative aspect-[4/5] overflow-hidden rounded-sm bg-[#1a1a1a] border border-white/5">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-6">
-                    <span className="text-[9px] text-amber-400 tracking-widest uppercase mb-1">{project.category}</span>
-                    <h3 className="text-lg font-medium text-white mb-1">{project.title}</h3>
-                    <span className="text-gray-500 text-xs">{project.location}</span>
-                  </div>
+              <div key={index} className="group relative aspect-[4/5] overflow-hidden rounded-sm bg-[#1a1a1a] border border-white/5">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-6">
+                  <span className="text-[9px] text-amber-400 tracking-widest uppercase mb-1">{project.category}</span>
+                  <h3 className="text-lg font-medium text-white mb-1">{project.title}</h3>
+                  <span className="text-gray-500 text-xs">{project.location}</span>
                 </div>
-              </AnimatedSection>
+              </div>
             ))}
           </div>
         </div>
@@ -480,11 +353,7 @@ function App() {
       {/* Contact & CTA */}
       <section id="contact" className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/foto2.png"
-            alt="Luxury Property Exterior"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <img src="/images/foto2.png" alt="Luxury Property Exterior" className="w-full h-full object-cover opacity-20" />
         </div>
         <div className="max-w-4xl mx-auto text-center px-4 relative z-10">
           <span className="text-amber-400 text-xs tracking-widest uppercase font-semibold block mb-2">Start Your Journey</span>
