@@ -280,7 +280,7 @@ function App() {
           style={{ transform: `translateY(${heroParallax}px)` }}
         >
           <img
-            src="./public/images/foto1.jpg"
+            src="/images/foto1.jpg"
             alt="Luxury Modern Classic Mansion in Bandung"
             className="w-full h-[120%] object-cover hero-breath"
           />
@@ -393,7 +393,7 @@ function App() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="./public/images/foto3.jpg"
+            src="/images/foto3.jpg"
             alt="Luxury Architecture Interior"
             className="w-full h-full object-cover opacity-20"
           />
@@ -411,10 +411,10 @@ function App() {
               </h2>
               <div className="divider-gold mb-8" />
               <p className="text-ivory-300/70 leading-relaxed mb-6 text-lg font-light">
-                Kami believe bahwa sebuah bangunan bukan hanya struktur fisik. Bangunan adalah representasi pencapaian, identitas, dan investasi jangka panjang.
+                Kami percaya bahwa sebuah bangunan bukan hanya struktur fisik. Bangunan adalah representasi pencapaian, identitas, dan investasi jangka panjang.
               </p>
               <p className="text-ivory-300/70 leading-relaxed mb-10 font-light">
-                Melalui pendekatan Design & Build yang terintegrasi, kami memastikan setiap detail dirancang dan dibangun dengan presisi tinggi untuk menghasilkan karya yang elegan, fungsional, dan bernilai tinggi.
+                Melalui pendekatan Design & Build yang terintegrasi, kami memastikan setiap detail dirancang dan dibangun dengan presisi tinggi untuk menghasilkan karya yang elegan, fungsional, and bernilai tinggi.
               </p>
               <button
                 onClick={() => handleNavClick('services')}
@@ -429,7 +429,7 @@ function App() {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-luxury-xl">
                   <img
-                    src="./public/images/foto8.jpg"
+                    src="/images/foto8.jpg"
                     alt="Premium Modern Classic Interior"
                     className="w-full h-full object-cover"
                   />
@@ -516,7 +516,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="./public/images/foto6.jpg"
+            src="/images/foto6.jpg"
             alt="Luxury Property Architecture"
             className="w-full h-full object-cover opacity-15"
           />
@@ -547,7 +547,7 @@ function App() {
                   'Working Drawing',
                   'Official Budget Planning (RAB)',
                 ],
-                image: "./public/images/foto21.jpg",
+                image: "/images/foto21.jpg",
               },
               {
                 icon: Hammer,
@@ -560,7 +560,7 @@ function App() {
                   'Premium Certified Materials',
                   'Professional Site Management',
                 ],
-                image: "./public/images/foto16.jpg",
+                image: "/images/foto16.jpg",
               },
               {
                 icon: Palette,
@@ -574,7 +574,7 @@ function App() {
                   'Built-In Furniture',
                   'Independent Workshop Production',
                 ],
-                image: "./public/images/foto12.jpg",
+                image: "/images/foto12.jpg",
               },
             ].map((service, index) => (
               <AnimatedSection key={index} delay={index * 150}>
@@ -614,7 +614,7 @@ function App() {
         {/* Full Width Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="./public/images/foto13.jpg"
+            src="/images/foto13.jpg"
             alt="Tropical Luxury Villa"
             className="w-full h-full object-cover opacity-30"
           />
@@ -693,42 +693,42 @@ function App() {
                   title: 'Initial Consultation',
                   description: 'Diskusi kebutuhan, gaya desain, target anggaran, dan jadwal pembangunan.',
                   icon: Users,
-                  image: "./public/images/foto17.jpg",
+                  image: "/images/foto17.jpg",
                 },
                 {
                   step: '02',
                   title: 'Site Survey & Analysis',
                   description: 'Analisa kondisi lahan, orientasi bangunan, dan potensi pengembangan.',
                   icon: Target,
-                  image: "./public/images/foto19.jpg",
+                  image: "/images/foto19.jpg",
                 },
                 {
                   step: '03',
                   title: 'Concept Design',
                   description: 'Penyusunan konsep desain, zoning ruang, dan visualisasi awal.',
                   icon: Palette,
-                  image: "./public/images/foto6.jpg",
+                  image: "/images/foto6.jpg",
                 },
                 {
                   step: '04',
                   title: 'Technical Planning',
                   description: 'Pembuatan gambar kerja lengkap, DED, dan RAB.',
                   icon: Shield,
-                  image: "./public/images/foto25.jpg",
+                  image: "/images/foto25.jpg",
                 },
                 {
                   step: '05',
                   title: 'Construction',
                   description: 'Pelaksanaan pembangunan dengan pengawasan profesional.',
                   icon: Hammer,
-                  image: "./public/images/foto6.jpg",
+                  image: "/images/foto6.jpg",
                 },
                 {
                   step: '06',
                   title: 'Project Handover',
                   description: 'Quality control akhir, serah terima proyek, dan garansi.',
                   icon: Award,
-                  image: "./public/images/foto20.jpg",
+                  image: "/images/foto20.jpg",
                 },
               ].map((item, index) => (
                 <AnimatedSection key={index} delay={index * 100}>
@@ -767,7 +767,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="./public/images/foto10.jpg"
+            src="/images/foto10.jpg"
             alt="Luxury Architecture Background"
             className="w-full h-full object-cover opacity-20"
           />
@@ -787,37 +787,37 @@ function App() {
                 title: 'Modern Classic Residence',
                 category: 'Luxury Residence',
                 location: 'Jepara',
-                image: "./public/images/foto5.jpg",
+                image: "/images/foto5.jpg",
               },
               {
                 title: 'Nglimut House',
                 category: 'Contemporary Villa',
                 location: 'Semarang',
-                image: "./public/images/foto22.jpg",
+                image: "/images/foto22.jpg",
               },
               {
                 title: 'Executive Office Premier',
                 category: 'Commercial Building',
                 location: 'Canggu',
-                image: "./public/images/foto9.jpg",
+                image: "/images/foto9.jpg",
               },
               {
                 title: 'Bayfront Villa',
                 category: 'Villa & Resort',
                 location: 'Balikpapan',
-                image: "./public/images/foto13.jpg",
+                image: "/images/foto13.jpg",
               },
               {
                 title: 'Artisan Restaurant',
                 category: 'F&B Space',
                 location: 'Tuban',
-                image: "./public/images/nama-foto11.jpg",
+                image: "/images/nama-foto11.jpg",
               },
               {
                 title: 'Grand Kitchen Suite',
                 category: 'Interior & Furniture',
                 location: 'Balikpapan',
-                image: "./public/images/foto7.jpg",
+                image: "/images/foto7.jpg",
               },
             ].map((project, index) => (
               <AnimatedSection key={index} delay={index * 100}>
@@ -916,7 +916,7 @@ function App() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="./public/images/foto2.jpg"
+            src="/images/foto2.jpg"
             alt="Luxury Property Exterior"
             className="w-full h-full object-cover"
           />
